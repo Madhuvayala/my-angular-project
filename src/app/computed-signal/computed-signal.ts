@@ -17,4 +17,12 @@ incriment(){
 inc(){
   this.count.set(this.count()+1);
 }
+
+firstName=signal<string>('madhu');
+lastName=signal<string>('vayala');
+fullName=computed<string>(()=>this.firstName()+' '+this.lastName());
+
+price=signal<number[]>([10,20,30,40,50]);
+totalPrice=computed<number>(()=>this.price().reduce((a,b)=>a+b,0));
+subTotal=computed<number>(()=>{return this.price().reduce((a, b) => a + b, 0);});
 }

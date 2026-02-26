@@ -8,11 +8,12 @@ import { Functions } from './functions/functions';
 import { Looping } from './looping/looping';
 import { Signalss } from './signalss/signalss';
 import { ComputedSignal } from './computed-signal/computed-signal';
+import { Effects } from './effects/effects';
 
 @Component({
   selector: 'app-root',
   // NgFor, NgIf,
-  imports: [Login, SigninComponent, Events,Functions,Looping,Signalss,ComputedSignal],
+  imports: [Login, SigninComponent, Events,Functions,Looping,Signalss,ComputedSignal,Effects],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
