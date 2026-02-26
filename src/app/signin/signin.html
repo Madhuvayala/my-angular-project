@@ -1,2 +1,75 @@
 <h1 class="madhu">signin working</h1>
 <h1>{{title}}</h1>
+<!-- @if -->
+@if(marks>=50){
+    <p>pass</p>
+}@else {
+    <p>fail</p>
+}
+<button (click)="toggleBox()">toggle</button>
+@if(showBox){
+    <div class="box">this is a box</div>
+}
+<input type="text" (input)="updatedAge($event.target.value)" placeholder="Enter your age">
+
+@if(age>=18){
+    <p>adult</p>
+}@else {
+    <p>minor</p>
+}
+
+<!-- @else if -->
+@if(status==='active'){
+    <p>active user</p>
+}@else if(status==='inactive'){ 
+    <p>inactive user</p>
+}@else if (status ==='shipped') {
+    <p>shipped user</p>
+}
+<!-- @switch -->
+ @switch (color) {
+    @case('red'){
+        <p>color is red</p>
+    }
+    @case ('blue'){
+        <p>color is blue</p>
+    }
+    @case ('green'){
+        <p>color is green</p>
+    }
+    @default {
+        <p>page not found</p>
+    }
+        
+ }
+<button (click)="tab='home'">Home</button>
+<button (click)="tab='contact'">Contact</button>
+<button (click)="tab='about'">About</button>
+
+@switch(tab){
+    @case('home'){
+        <h1>Home page</h1>
+    }
+    @case('contact'){
+        <h1>Contact page</h1>
+    }
+    @case('about'){
+        <h1>About page</h1>
+    }
+}
+<br>
+<input type="text" (input)="updateCategory($event.target.value)" placeholder="Enter your category">
+@switch (category) {
+    @case('fruits'){
+        <h2>Fruits category</h2>
+    }
+    @case('vegetables'){
+        <h2>Vegetables category</h2>
+    }
+    @case ('nonVeg') {
+        <h2>Non-Vegetarian category</h2>
+    }
+    @default {
+        <h2>Other category</h2>
+    }
+}

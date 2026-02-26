@@ -5,22 +5,19 @@ import { Login } from './login/login';
 import { SigninComponent } from './signin/signin';
 import { Events } from './events/events';
 import { Functions } from './functions/functions';
+import { Looping } from './looping/looping';
+import { Signalss } from './signalss/signalss';
+import { ComputedSignal } from './computed-signal/computed-signal';
 
 @Component({
   selector: 'app-root',
   // NgFor, NgIf,
-  imports: [Login, SigninComponent, Events,Functions],
+  imports: [Login, SigninComponent, Events,Functions,Looping,Signalss,ComputedSignal],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('myProjrct')
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,51 @@
+<!-- @for (item of items; track $index) {
+    <p>{{$index+1}} .{{item}}</p>
+} -->
+ <!-- @for(user of users; track user.name){
+        <p>Name: {{user.name}}, Age: {{user.age}}, City: {{user.city}}</p>
+ }    -->
+    
+
+@for(item of items; track $index;let i = $index) {
+    <p>{{$index+1}}.{{item}}</p>
+    <button (click)="deleteItem(i)">delete</button>
+}
+
+@for(number of numbers; track $index) {
+    @if (number % 2 === 0) {
+        <p>{{number}} is even</p>
+    } @else {
+        <p>{{number}} is odd</p>
+    }
+}
+<!-- @for(subject of subject; track $index) {
+    <p>{{$index+1}}=>{{subject}}</p>
+    <p>totolCount:{{$count}}</p>
+} -->
+@for(subject of subject; track $index; let i = $index;let c=$count) {
+    <p>{{i+1}}=>{{subject}}</p>
+    <p>totolCount:{{c}}</p>
+}
+@for(subject of subject; track $index;) {
+   @if($first) {
+        <p>First: {{subject}}</p>
+    } @else if($last) {
+        <p>Last: {{subject}}</p>
+       
+    } @else {
+        <p>{{subject}}</p>
+    }
+}
+
+@for(number of numbers; track $index) {
+   <p [style.background-color]="$even ? 'lightblue' : 'lightgray'">{{number}}</p>
+   <div>
+    <strong>{{number}}</strong>
+    <span>|index:{{$index}}</span>
+    <span>|even:{{$even}}</span>
+    <span>|odd:{{$odd}}</span>
+    <span>|first:{{$first}}</span>
+    <span>|last:{{$last}}</span>
+    <span>|count:{{$count}}</span>
+   </div>
+}
