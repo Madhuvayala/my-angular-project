@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'app-looping',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './looping.css',
 })
 export class Looping {
+@Input() chaildStore:any;
+@Input() chaildStore1:any;
 items: string[] = ['apple', 'banana', 'dates', 'goa'];
 subject: string[] = ['html', 'css', 'javascript', 'java', 'angular'];
 users = [

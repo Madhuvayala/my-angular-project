@@ -1,12 +1,14 @@
 import { Component, signal ,computed} from '@angular/core';
+import { Looping } from '../looping/looping';
 
 @Component({
   selector: 'app-computed-signal',
-  imports: [],
+  imports: [Looping],
   templateUrl: './computed-signal.html',
   styleUrl: './computed-signal.css',
 })
 export class ComputedSignal {
+  titleCard='Computed Signal';
 count=signal<number>(2);
 doubleCount=computed(()=>this.count()*2);
 tripleCount=computed(()=>this.count()*3);

@@ -34,10 +34,12 @@
 <hr>
 <app-functions></app-functions>
 <hr>
-<app-looping></app-looping>
+<app-looping [chaildStore]="titles"></app-looping>
 <hr>
 <app-signalss></app-signalss>
 <hr>
 <app-computed-signal></app-computed-signal>
 <hr>
 <app-effects></app-effects>
+<hr>
+<app-chaild [title]="titles" (chaildPassData)="handleChaildData($event)"></app-chaild>

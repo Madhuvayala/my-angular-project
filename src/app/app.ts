@@ -9,18 +9,20 @@ import { Looping } from './looping/looping';
 import { Signalss } from './signalss/signalss';
 import { ComputedSignal } from './computed-signal/computed-signal';
 import { Effects } from './effects/effects';
+import { Chaild } from './chaild/chaild';
+// import { Parent } from './parent/parent';
 
 @Component({
   selector: 'app-root',
   // NgFor, NgIf,
-  imports: [Login, SigninComponent, Events,Functions,Looping,Signalss,ComputedSignal,Effects],
+  imports: [Login, SigninComponent,Chaild, Events,Functions,Looping,Signalss,ComputedSignal,Effects],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('myProjrct')
 
-
+titles ='LoopingKaa';
 
   board: string[] = Array(9).fill('');
   currentPlayer: string = 'X';
@@ -74,6 +76,11 @@ count=0;
   }
   helloWorld(){
     console.log('hellow World')
+  }
+  name:any;
+  handleChaildData(data:any){
+    alert(data);
+    this.name=data;
   }
 }
  
