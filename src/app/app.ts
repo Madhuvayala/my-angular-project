@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
@@ -10,18 +10,23 @@ import { Signalss } from './signalss/signalss';
 import { ComputedSignal } from './computed-signal/computed-signal';
 import { Effects } from './effects/effects';
 import { Chaild } from './chaild/chaild';
+import { PipeShortNamePipe } from './pipe/pipe-short-name-pipe';
+import { ConvertPipe } from './pipe/convert-pipe';
+import { TwoWayDataBinding } from './two-way-data-binding/two-way-data-binding';
 // import { Parent } from './parent/parent';
 
 @Component({
   selector: 'app-root',
   // NgFor, NgIf,
-  imports: [Login, SigninComponent,Chaild, Events,Functions,Looping,Signalss,ComputedSignal,Effects],
+  imports: [TwoWayDataBinding,Login, SigninComponent,Chaild,PipeShortNamePipe,ConvertPipe, Events,Functions,Looping,Signalss,ComputedSignal,Effects,CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('myProjrct')
-
+fullName='vayala madhu';
+usd=10;
+ToInt=85;
 titles ='LoopingKaa';
 
   board: string[] = Array(9).fill('');
