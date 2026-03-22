@@ -13,12 +13,13 @@ import { Chaild } from './chaild/chaild';
 import { PipeShortNamePipe } from './pipe/pipe-short-name-pipe';
 import { ConvertPipe } from './pipe/convert-pipe';
 import { TwoWayDataBinding } from './two-way-data-binding/two-way-data-binding';
+import { ToDoApp } from './to-do-app/to-do-app';
 // import { Parent } from './parent/parent';
 
 @Component({
   selector: 'app-root',
   // NgFor, NgIf,
-  imports: [TwoWayDataBinding,Login, SigninComponent,Chaild,PipeShortNamePipe,ConvertPipe, Events,Functions,Looping,Signalss,ComputedSignal,Effects,CommonModule],
+  imports: [ToDoApp,TwoWayDataBinding,Login, SigninComponent,Chaild,PipeShortNamePipe,ConvertPipe, Events,Functions,Looping,Signalss,ComputedSignal,Effects,CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -88,4 +89,3 @@ count=0;
     this.name=data;
   }
 }
- 
