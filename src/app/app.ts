@@ -1,5 +1,6 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import{ Store } from '@ngrx/store';
 import { RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { SigninComponent } from './signin/signin';
@@ -14,16 +15,28 @@ import { PipeShortNamePipe } from './pipe/pipe-short-name-pipe';
 import { ConvertPipe } from './pipe/convert-pipe';
 import { TwoWayDataBinding } from './two-way-data-binding/two-way-data-binding';
 import { ToDoApp } from './to-do-app/to-do-app';
+import { decrement, increment, reset } from './store/counter.action';
 // import { Parent } from './parent/parent';
 
 @Component({
   selector: 'app-root',
-  // NgFor, NgIf,
-  imports: [ToDoApp,TwoWayDataBinding,Login, SigninComponent,Chaild,PipeShortNamePipe,ConvertPipe, Events,Functions,Looping,Signalss,ComputedSignal,Effects,CommonModule],
+  // NgFor, NgIf,ToDoApp,TwoWayDataBinding,Login, SigninComponent,Chaild,PipeShortNamePipe,ConvertPipe, Events,Functions,Looping,Signalss,ComputedSignal,Effects,CommonModule
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  constructor(private store: Store) {}
+increment(){
+  this.store.dispatch(increment());
+}
+decrement(){
+  this.store.dispatch(decrement());
+}
+reset(){
+  this.store.dispatch(reset());
+}
+
   protected readonly title = signal('myProjrct')
 fullName='vayala madhu';
 usd=10;

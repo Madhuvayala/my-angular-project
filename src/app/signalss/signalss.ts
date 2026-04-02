@@ -8,13 +8,11 @@ import { Component, signal } from '@angular/core';
 })
 
 export class Signalss {
-  
-  count=signal(0);
+  count = signal(0);
   val=20;
 incriment(){
   console.log(this.count());
   this.count.update((c)=>c+1);
-
 }
 decriment(){
   console.log(this.count());
