@@ -16,17 +16,22 @@ import { ConvertPipe } from './pipe/convert-pipe';
 import { TwoWayDataBinding } from './two-way-data-binding/two-way-data-binding';
 import { ToDoApp } from './to-do-app/to-do-app';
 import { decrement, increment, reset } from './store/counter.action';
+import { Observable } from 'rxjs';
+import { AppState, selectCounter } from './store/counter.selector';
 // import { Parent } from './parent/parent';
 
 @Component({
   selector: 'app-root',
   // NgFor, NgIf,ToDoApp,TwoWayDataBinding,Login, SigninComponent,Chaild,PipeShortNamePipe,ConvertPipe, Events,Functions,Looping,Signalss,ComputedSignal,Effects,CommonModule
-  imports: [],
+  imports: [CommonModule,RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  constructor(private store: Store) {}
+  counter$: Observable<number>;
+  constructor(private store: Store<AppState>) {
+    this.counter$ = this.store.select(selectCounter);
+  }
 increment(){
   this.store.dispatch(increment());
 }
