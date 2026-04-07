@@ -1,0 +1,8 @@
+<p>inputs-using-signals works!</p>
+<h2>Parent Component</h2>
+<app-chaild [name]="userName" [title]="titles" (subjectData)="onMassage($event)" (chaildPassData)="onMassages($event)"
+(trigger)="onTrigger($event)" #chaild ></app-chaild>
+<p>Signal Massage: {{ chaild.signalMassage() }}</p>
+<p>message: {{ subjectName }}</p>
+<p>OnTrigger: {{ selectedTrigger }}</p>
+<p>message: {{ subject }}</p>

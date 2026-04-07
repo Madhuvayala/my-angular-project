@@ -12,6 +12,10 @@ import { Parent } from './parent/parent';
 import { Signalss } from './signalss/signalss';
 import { SigninComponent } from './signin/signin';
 import { ToDoApp } from './to-do-app/to-do-app';
+import { SignalsWithTemplate } from './signals-with-template/signals-with-template';
+import { InputsUsingSignals } from './inputs-using-signals/inputs-using-signals';
+import { StoreWithNgrx } from './store-with-ngrx/store-with-ngrx';
+import { FormWithSignals } from './form-with-signals/form-with-signals';
 
 export const routes: Routes = [
     {
@@ -65,5 +69,25 @@ export const routes: Routes = [
     {
         path: 'todo',
         component:ToDoApp
+    },
+    {
+        path: 'chaild',
+        component:Chaild
+    },
+    {
+        path: 'signal-with-template',
+        component:SignalsWithTemplate
+    },
+    {
+        path: 'inputs-using-signals',
+        component:InputsUsingSignals
+    },
+    {
+        path: 'store-with-ngrx',
+        component:StoreWithNgrx
+    },
+    {
+        path: 'form-with-signals',
+        component:FormWithSignals
     },
 ];
