@@ -1,1 +1,32 @@
-<p>form-with-signals works!</p>
+<h2>template Driven form with signal</h2>
+
+<input type="text" [(ngModel)]="name" (ngModelChange)="name.set($event)" placeholder="Enter your name"><br>
+<input type="email" [(ngModel)]="email" (ngModelChange)="email.set($event)" placeholder="Enter your email">
+<button (click)="submitForm()">Submit</button>
+<p>Name: {{ name() }}</p>
+<p>Email: {{ email() }}</p>
+<hr>
+<h2>Signal reactive form</h2>
+
+<form [formGroup]="form" (ngSubmit)="submitForms()">
+  <input type="text" formControlName="name" placeholder="Enter your name"><br><br>
+  <input type="email" formControlName="email" placeholder="Enter your email"><br><br>
+  <button type="submit">Submit</button>
+</form>
+<p>Name: {{ userSignal().name }}</p>
+<p>Email: {{ userSignal().email }}</p>
+
+<pre>{{ userSignal() | json }}</pre>
+<hr>
+
+<app-card [title]="'Angular Course'"
+ [content]="'This is the content of the Angular course card.'">
+ <p>this is a paragraph inside the card</p>
+ <button>Click me</button>
+</app-card>
+<hr>
+<!-- <app-button [lable]="'Click Me'"
+ (clicked)="saveData()"></app-button> -->
+ <app-button [lable]="'Save'"
+ (clicked)="onSave($event)"></app-button>
+ <p>{{ message }}</p>

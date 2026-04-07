@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { Effects } from './effects';
 
-describe('Effects', () => {
-  let component: Effects;
-  let fixture: ComponentFixture<Effects>;
+import { Card } from './card';
+
+describe('Card', () => {
+  let component: Card;
+  let fixture: ComponentFixture<Card>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Effects]
+      imports: [Card]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Effects);
+    fixture = TestBed.createComponent(Card);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
