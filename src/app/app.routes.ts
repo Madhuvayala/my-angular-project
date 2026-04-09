@@ -16,6 +16,9 @@ import { SignalsWithTemplate } from './signals-with-template/signals-with-templa
 import { InputsUsingSignals } from './inputs-using-signals/inputs-using-signals';
 import { StoreWithNgrx } from './store-with-ngrx/store-with-ngrx';
 import { FormWithSignals } from './form-with-signals/form-with-signals';
+import { Dashboard } from './dashboard/dashboard';
+import { Profile } from './dashboard/profile/profile';
+import { Settings } from './dashboard/settings/settings';
 
 export const routes: Routes = [
     {
@@ -90,4 +93,18 @@ export const routes: Routes = [
         path: 'form-with-signals',
         component:FormWithSignals
     },
+    {
+        path:'dashboard',
+        component:Dashboard,
+        children:[
+            {
+                path:'profile',
+                component:Profile
+            },
+            {
+                path:'settings',
+                component:Settings
+            },
+        ]
+    }
 ];
