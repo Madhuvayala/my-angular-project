@@ -1,7 +1,7 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import{ Store } from '@ngrx/store';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { SigninComponent } from './signin/signin';
 import { Events } from './events/events';

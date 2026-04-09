@@ -19,6 +19,7 @@ import { FormWithSignals } from './form-with-signals/form-with-signals';
 import { Dashboard } from './dashboard/dashboard';
 import { Profile } from './dashboard/profile/profile';
 import { Settings } from './dashboard/settings/settings';
+import { Home } from './home/home';
 
 export const routes: Routes = [
     {
@@ -106,5 +107,13 @@ export const routes: Routes = [
                 component:Settings
             },
         ]
+    },
+    {
+        path:'home',
+        component:Home
+    },
+    {
+        path:'admin',
+        loadComponent:()=>import('./admin/admin').then(m=>m.Admin)
     }
 ];
