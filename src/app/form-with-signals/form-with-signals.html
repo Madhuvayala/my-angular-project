@@ -30,3 +30,8 @@
  <app-button [lable]="'Save'"
  (clicked)="onSave($event)"></app-button>
  <p>{{ message }}</p>
+ <hr>
+  <app-form-field [label]="'Email'" 
+   [type]="'email'"
+   (valueChange)="onEmailChage($event)"></app-form-field>
+   <p>Email: {{ emails }}</p>

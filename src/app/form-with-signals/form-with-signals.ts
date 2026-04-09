@@ -4,14 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { FormBuilder,ReactiveFormsModule } from '@angular/forms';
 import{Card} from '../card/card';
 import { Button } from '../button/button';
+import { FormField } from '../form-field/form-field';
 
 @Component({
   selector: 'app-form-with-signals',
-  imports: [FormsModule, ReactiveFormsModule,CommonModule,Card,Button],
+  imports: [FormsModule, ReactiveFormsModule,CommonModule,Card,Button,FormField],
   templateUrl: './form-with-signals.html',
   styleUrl: './form-with-signals.css',
 })
 export class FormWithSignals {
+  emails='';
 name=signal('');
 email=signal('')
 
@@ -39,4 +41,10 @@ message=''
 onSave(msg:string){
   this.message=msg;
 }
+onEmailChage(value:string){
+console.log('Email changed:', value);
+this.emails=value;
+}
+
+
 }
