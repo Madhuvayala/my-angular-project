@@ -23,6 +23,10 @@ import { Home } from './home/home';
 import { About } from './about/about';
 import { Contact } from './contact/contact';
 import { BuildHome } from './build-home/build-home';
+import { PageNotFound } from './page-not-found/page-not-found';
+import { SignalDeep } from './signal-deep/signal-deep';
+import { authGuard } from './auth-guard';
+
 
 export const routes: Routes = [
     {
@@ -32,6 +36,11 @@ export const routes: Routes = [
     {
         path: 'twoway',
         component: TwoWayDataBinding
+    },
+    {
+        path: 'signal-deep',
+        component: SignalDeep,
+        canActivate: [authGuard]
     },
     {
         path: 'Chaild-component',
@@ -139,6 +148,11 @@ export const routes: Routes = [
         path: 'home',
         component: Home
     },
-
+    
+    // Wildcard route for a 404 page
+    {
+        path:'**',
+        component:PageNotFound
+    }
 
 ];
