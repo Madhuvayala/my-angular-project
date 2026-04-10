@@ -20,100 +20,125 @@ import { Dashboard } from './dashboard/dashboard';
 import { Profile } from './dashboard/profile/profile';
 import { Settings } from './dashboard/settings/settings';
 import { Home } from './home/home';
+import { About } from './about/about';
+import { Contact } from './contact/contact';
+import { BuildHome } from './build-home/build-home';
 
 export const routes: Routes = [
     {
         path: '',
-        component:Login
+        component: Login
     },
     {
         path: 'twoway',
-        component:TwoWayDataBinding
+        component: TwoWayDataBinding
     },
     {
         path: 'Chaild-component',
-        component:Chaild
+        component: Chaild
     },
     {
         path: 'computed-signal',
-        component:ComputedSignal
+        component: ComputedSignal
     },
     {
         path: 'datagrid',
-        component:DataGrid
+        component: DataGrid
     },
     {
         path: 'efects',
-        component:Effects
+        component: Effects
     },
     {
         path: 'events',
-        component:Events
+        component: Events
     },
     {
         path: 'functions',
-        component:Functions
+        component: Functions
     },
     {
         path: 'looping',
-        component:Looping
+        component: Looping
     },
     {
         path: 'parent',
-        component:Parent
+        component: Parent
     },
     {
         path: 'signals',
-        component:Signalss
+        component: Signalss
     },
     {
         path: 'signin',
-        component:SigninComponent
+        component: SigninComponent
     },
     {
         path: 'todo',
-        component:ToDoApp
+        component: ToDoApp
     },
     {
         path: 'chaild',
-        component:Chaild
+        component: Chaild
     },
     {
         path: 'signal-with-template',
-        component:SignalsWithTemplate
+        component: SignalsWithTemplate
     },
     {
         path: 'inputs-using-signals',
-        component:InputsUsingSignals
+        component: InputsUsingSignals
     },
     {
         path: 'store-with-ngrx',
-        component:StoreWithNgrx
+        component: StoreWithNgrx
     },
     {
         path: 'form-with-signals',
-        component:FormWithSignals
+        component: FormWithSignals
     },
     {
-        path:'dashboard',
-        component:Dashboard,
-        children:[
+        path: 'dashboard',
+        component: Dashboard,
+        children: [
             {
-                path:'profile',
-                component:Profile
+                path: 'profile',
+                component: Profile
             },
             {
-                path:'settings',
-                component:Settings
+                path: 'settings',
+                component: Settings
+            },
+        ]
+    },
+
+    {
+        path: 'admin',
+        loadComponent: () => import('./admin/admin').then(m => m.Admin)
+    },
+
+    {
+        path: 'build-home',
+        component: BuildHome,
+        children: [
+            {
+                path: 'contact',
+                component: Contact
+            },
+            {
+                path: 'home',
+                component: Home
+            },
+            {
+                path: 'about',
+                component: About
             },
         ]
     },
     {
-        path:'home',
-        component:Home
+        path: 'home',
+        component: Home
     },
-    {
-        path:'admin',
-        loadComponent:()=>import('./admin/admin').then(m=>m.Admin)
-    }
+
+
 ];
