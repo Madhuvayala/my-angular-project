@@ -23,7 +23,7 @@ import { AppState, selectCounter } from './store/counter.selector';
 @Component({
   selector: 'app-root',
   // NgFor, Chaild,NgIf,ToDoApp,TwoWayDataBinding,Login, SigninComponent,Chaild,PipeShortNamePipe,ConvertPipe, Events,Functions,Looping,Signalss,ComputedSignal,Effects,CommonModule
-  imports: [CommonModule,RouterOutlet],
+  imports: [CommonModule,RouterOutlet,RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

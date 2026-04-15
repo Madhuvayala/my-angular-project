@@ -26,16 +26,30 @@ import { BuildHome } from './build-home/build-home';
 import { PageNotFound } from './page-not-found/page-not-found';
 import { SignalDeep } from './signal-deep/signal-deep';
 import { authGuard } from './auth-guard';
+import { Profiles } from './profiles/profiles';
+import { canDeactivateGuard } from './can-deactivate-guard';
+import { RouteParamsOne } from './route-params-one/route-params-one';
+import { RouteParamsTwo } from './route-params-two/route-params-two';
+import { App } from './app';
 
 
 export const routes: Routes = [
+    // {
+    //     path: '',
+    //     component: Login
+    // },
     {
         path: '',
-        component: Login
+        component: App
     },
     {
         path: 'twoway',
         component: TwoWayDataBinding
+    },
+     {
+        path: 'profiles',
+        component: Profiles,
+        canDeactivate: [canDeactivateGuard]
     },
     {
         path: 'signal-deep',
@@ -105,6 +119,14 @@ export const routes: Routes = [
     {
         path: 'form-with-signals',
         component: FormWithSignals
+    },
+    {
+        path: 'route-navigation/:id',
+        component: RouteParamsOne,
+    },
+    {
+        path: 'route-navigation-two',
+        component: RouteParamsTwo,
     },
     {
         path: 'dashboard',
